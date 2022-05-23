@@ -20,11 +20,13 @@
     display: flex;
     align-content: center;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
 }
 .button{
     padding: 5px 10px;
+    display: inline-block;
+
 }
 .white-b{
     background-color: var(--1st-color);
@@ -33,6 +35,23 @@
 
 }
 
+.blue-b{
+    background-color: var(--5th-color);
+    color: var(--1st-color);
+    border-radius: 14px 14px;
+}
+.box-container{
+    width: calc( 100% - 40px );
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+}
+.box-container i{
+    color: var(--5th-color);
+}
 /*------------------------------HEADER*/
 header{
     background-color: var(--5th-color);
@@ -67,19 +86,42 @@ section{
     margin: 10px 5px;
     border-radius: 1rem;
 
+}
 
-
-    height: 13vh;
+.box-w-2-3rd{
+    width: 100%;
+    min-height: 10vw;
+}
+.box-w-1-3rd{
+    width: 100%;
+    min-height: 10vw;
+}
+.light-blue-box-rounded .title{
+    font-size: 1.4em;
+    color: var(--5th-color);
+    font-weight: 500;
+}
+.light-blue-box-rounded img{
+    width: 200px;
 }
 
 section:nth-child(even) {
     background-color: var(--3rd-color);
   }
 
+.box-container *{
+    margin-top: 25px;
+    align-self: center;
+}
 
 
 
 
+
+.box-container i{
+    font-size: 3rem;
+    color: var(--5th-color);
+}
 
 
 
@@ -91,22 +133,33 @@ section:nth-child(even) {
 /*------------------------------MEDIA-QUERY*/
 
 @media all and (min-width: 768px){
-    .container{
-
+    .box-w-2-3rd{
+        width: calc( ( 100% / 3 * 2 ) - 5px * 2 );
+    }
+    .box-w-1-3rd{
+        width: calc( 100% / 3 - 5px * 2 );
     }
 
 }
 
 @media all and (min-width: 992px){
     .container{
-        margin: 0 auto;
         width: 800px;
+        margin: 0 auto;
     }
+
     .show-menu{
         display: none;
     }
     .menu-list ul{
         display: flex;
+    }
+    .light-blue-box-rounded:first-child{
+        display: flex;
+        align-items: flex-end;
+    }
+    .light-blue-box-rounded:first-child *{
+        width: calc( 100% / 2 );
     }
 }
 
